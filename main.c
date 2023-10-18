@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	size_t buffer = 0;
 	stack_t *head = NULL;
 
-	if (argc < 2)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
@@ -35,6 +35,7 @@ int main(int argc, char **argv)
 			command(tokenized, &head, line_number);
 		}
 	}
+	free_list(head);
 	exit(EXIT_SUCCESS);
 }
 /**

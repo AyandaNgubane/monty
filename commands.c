@@ -84,3 +84,20 @@ void display(stack_t **stack, unsigned int line_number)
 		head = head->next;
 	}
 }
+/**
+  * free_dlistint - Free a doubly linked list
+  * @head: The head of the doubly linked list
+  *
+  * Return: void
+  */
+void free_list(stack_t *head)
+{
+	stack_t *current = head, *next = NULL;
+
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+}
