@@ -84,3 +84,21 @@ void display(stack_t **stack, unsigned int line_number)
 		head = head->next;
 	}
 }
+#include "monty.h"
+
+/**
+ * top - prints the value at the top of the stack
+ * @stack: head of stack
+ * @line_number: line number
+ * Return: void
+ */
+void top(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		fprintf(stderror, "L%u: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", (*stack)->n);
+}

@@ -62,6 +62,7 @@ void command(char *tokenized, stack_t **head, unsigned int line_number)
 	instruction_t user_input[] = {
 		{"push", push},
 		{"pall", display},
+		{"pint", top},
 		{NULL, NULL}
 	};
 
