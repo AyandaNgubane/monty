@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 	}
 	free(input);
 	fclose(fd);
-	exit(EXIT_SUCCESS);
+	return (0);
 }
 /**
  * command - function that checks the user input
