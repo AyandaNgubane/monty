@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 			temp = head;
 		}
 	}
+	free(input);
 	fclose(fd);
 	exit(EXIT_SUCCESS);
 }
