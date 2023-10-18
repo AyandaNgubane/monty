@@ -42,7 +42,6 @@ typedef struct instruction_s
 
 void command(char *tokenized, stack_t **head, unsigned int line_number);
 void display(stack_t **stack, unsigned int line_number);
-void free_list(stack_t *head);
 stack_t *add_node(stack_t **head, int n);
 int is_number(char *str);
 void push(stack_t **stack, unsigned int line_number);

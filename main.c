@@ -35,8 +35,6 @@ int main(int argc, char **argv)
 			command(tokenized, &head, line_number);
 		}
 	}
-	free_list(head);
-
 	if (head)
 	{
 		temp = head;
