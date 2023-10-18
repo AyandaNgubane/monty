@@ -36,6 +36,7 @@ int main(int argc, char **argv)
 		}
 	}
 	free_list(head);
+	fclose(fd);
 	exit(EXIT_SUCCESS);
 }
 /**
