@@ -58,9 +58,10 @@ void command(char *tokenized, stack_t **head, unsigned int line_number)
 	{
 		if (strcmp(user_input[i].opcode, tokenized) == 0)
 		{
-			user_input[i].f(head, line_number);
+			(user_input[i].f(head, line_number));
 			return;
 		}
+		i++;
 	}
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, tokenized);
 	exit(EXIT_FAILURE);

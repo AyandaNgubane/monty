@@ -10,7 +10,6 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	char *value;
 	int n;
-	stack_t *list;
 
 	value = strtok(NULL, " \n\r\t");
 	if (is_number(value) || !value)
@@ -19,8 +18,7 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(value);
-	list = add_node(stack, n);
-	/*free_list(list);*/
+	add_node(stack, n);
 }
 /**
  * is_number - checks if string is a number
@@ -31,7 +29,7 @@ int is_number(char *str)
 {
 	int i = 0;
 
-	while (i)
+	while (str[i])
 	{
 		if (isdigit(str[i]))
 			i++;
@@ -66,23 +64,6 @@ stack_t *add_node(stack_t **head, int n)
 		(*head)->prev = new;
 	*head = new;
 	return (new);
-}
-/**
-  * free_list - Free a doubly linked list
-  * @head: The head of the doubly linked list
-  *
-  * Return: void
-  */
-void free_list(stack_t *head)
-{
-	stack_t *current = head, *next = NULL;
-
-	while (current != NULL)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
 }
 /**
  * display - function that prints all the elements
