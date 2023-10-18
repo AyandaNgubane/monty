@@ -46,5 +46,6 @@ stack_t *add_node(stack_t **head, int n);
 int is_number(char *str);
 void push(stack_t **stack, unsigned int line_number);
 void top(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 
 #endif
