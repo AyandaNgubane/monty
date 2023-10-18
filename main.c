@@ -34,8 +34,6 @@ int main(int argc, char **argv)
 		{
 			command(tokenized, &head, line_number);
 		}
-		else
-			line_number++;
 	}
 	if (head)
 	{
