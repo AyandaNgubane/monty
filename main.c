@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	{
 		line_number++;
 		tokenized = strtok(input, " \n\r\t");
-		if (tokenized)
+		if (tokenized && tokenized[0] != '#')
 		{
 			command(tokenized, &head, line_number);
 		}
