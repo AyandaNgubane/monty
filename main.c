@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	char *input = NULL, *tokenized = NULL;
 	unsigned int line_number = 0;
 	size_t buffer = 0;
-	stack_t *head = NULL;
+	stack_t *head = NULL, *temp = NULL;
 
 	if (argc != 2)
 	{
@@ -36,6 +36,18 @@ int main(int argc, char **argv)
 		}
 	}
 	free_list(head);
+
+	if (head)
+	{
+		temp = head;
+
+		while (temp)
+		{
+			head = head->next;
+			free(temp);
+			temp = head;
+		}
+	}
 	fclose(fd);
 	exit(EXIT_SUCCESS);
 }
