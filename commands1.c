@@ -29,6 +29,12 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 	free(temp);
 }
+/**
+ * swap - swaps top 2 elements
+ * @stack: head of list
+ * @line_number: line number
+ * Return: void
+ */
 void swap(stack_t **stack, unsigned int line_number)
 {
 	size_t container = 0, len = 0;
@@ -61,4 +67,32 @@ size_t list_len(stack_t *h)
 		nodes++;
 	}
 	return (nodes);
+}
+/**
+ * add - adds top 2 elements
+ * @stack: head of list
+ * @line_number: line number
+ * Return: void
+ */
+void add(stack_t **stack, unsigned int line_number)
+{
+	int container = 0;
+	size_t len = 0;
+	stack_t *temp = *stack;
+
+	len = list_len(*stack);
+	if (len < 2)
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (*stack)
+	{
+		container = temp->n;
+		temp->n = temp->next->n;
+		container = container + temp->n;
+		temp->next->n = container;
+		*stack = temp->next;
+		free(temp);
+	}
 }
