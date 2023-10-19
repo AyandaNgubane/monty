@@ -56,12 +56,14 @@ void rotr(stack_t **stack, unsigned int line_number)
 
 	if (*stack)
 	{
-		new = *stack;
-
-		while (new->next)
-			new = new->next;
-		new->prev->next = NULL;
-		new->next = *stack;
-		*stack = new;
+		if ((*stack)->next)
+		{
+			new = *stack;
+			while (new->next)
+				new = new->next;
+			new->prev->next = NULL;
+			new->next = *stack;
+			*stack = new;
+		}
 	}
 }
