@@ -74,7 +74,7 @@ size_t list_len(stack_t *h)
  * @line_number: line number
  * Return: void
  */
-void add(stack_t **stack, unsigned int line_number)
+void _add(stack_t **stack, unsigned int line_number)
 {
 	int container = 0;
 	size_t len = 0;

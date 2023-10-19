@@ -65,8 +65,11 @@ void command(char *tokenized, stack_t **head, unsigned int line_number)
 		{"pint", top},
 		{"pop", pop},
 		{"swap", swap},
-		{"add", add},
+		{"add", _add},
 		{"nop", nop},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 
