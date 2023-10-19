@@ -47,5 +47,7 @@ int is_number(char *str);
 void push(stack_t **stack, unsigned int line_number);
 void top(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+size_t list_len(stack_t *h);
 
 #endif
