@@ -12,8 +12,15 @@ void push(stack_t **stack, unsigned int line_number)
 	int n;
 
 	value = strtok(NULL, " \n\r\t");
+	if (value == NULL)
+	{
+		free(*stack);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	if (is_number(value) || !value)
 	{
+		free(*stack);
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
