@@ -69,7 +69,7 @@ size_t list_len(stack_t *h)
 	return (nodes);
 }
 /**
- * add - adds top 2 elements
+ * _add - adds top 2 elements
  * @stack: head of list
  * @line_number: line number
  * Return: void
