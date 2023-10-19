@@ -10,7 +10,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = *stack;
 	(void) line_number;
-	i
+
 	while (new != NULL)
 	{
 		if (new->n > 127 || new->n <= 0)
