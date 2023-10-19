@@ -30,7 +30,6 @@ int main(int argc, char **argv)
 	{
 		line_number++;
 		tokenized = strtok(input, " \n\r\t");
-		free(input);
 		if (tokenized && tokenized[0] != '#')
 		{
 			command(tokenized, &head, line_number);
@@ -47,6 +46,7 @@ int main(int argc, char **argv)
 			temp = head;
 		}
 	}
+	free(input);
 	fclose(fd);
 	return (0);
 }
