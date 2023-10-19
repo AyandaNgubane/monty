@@ -89,3 +89,36 @@ void _mul(stack_t **stack, unsigned int line_number)
 		free(temp);
 	}
 }
+/**
+ * _mod - gets remainder of division of 2nd element by top element
+ * @stack: head of list
+ * @line_number: line number
+ * Return: void
+ */
+void _mod(stack_t **stack, unsigned int line_number)
+{
+	int container = 0;
+	size_t len = 0;
+	stack_t *temp = *stack;
+
+	len = list_len(*stack);
+	if (len < 2)
+	{
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (*stack)
+	{
+		if (temp->n == 0)
+		{
+			fprintf(stderr, "L%u: division by zero\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+		container = temp->n;
+		temp->n = temp->next->n;
+		container = temp->n % container;
+		temp->next->n = container;
+		*stack = temp->next;
+		free(temp);
+	}
+}

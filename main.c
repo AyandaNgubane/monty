@@ -70,6 +70,7 @@ void command(char *tokenized, stack_t **head, unsigned int line_number)
 		{"sub", _sub},
 		{"div", _div},
 		{"mul", _mul},
+		{"mod", _mod},
 		{NULL, NULL}
 	};
 
