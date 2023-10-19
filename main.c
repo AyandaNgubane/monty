@@ -73,6 +73,7 @@ void command(char *tokenized, stack_t **head, unsigned int line_number)
 		{"mod", _mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 
