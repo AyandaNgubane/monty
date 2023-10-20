@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * push - a function that inserts to the stack
  * @stack: head of list
@@ -92,7 +91,6 @@ void display(stack_t **stack, unsigned int line_number)
 	}
 }
 #include "monty.h"
-
 /**
  * top - prints the value at the top of the stack
  * @stack: head of stack

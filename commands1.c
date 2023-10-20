@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * pop - removes top element
  * @stack: head of list
